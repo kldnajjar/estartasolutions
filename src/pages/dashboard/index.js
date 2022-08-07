@@ -10,6 +10,7 @@ import { getData } from "../../services/dashboard";
 import RenderTable from "../../components/table";
 import RenderTextField from "../../components/text";
 import RenderSelectField from "../../components/select";
+import RenderDateRangeField from "../../components/dateRange";
 
 import { headCells } from "./configuration";
 
@@ -20,6 +21,7 @@ function Dashboard() {
   const [employeeName, setEmployeeName] = React.useState("");
   const [actionType, setActionType] = React.useState("");
   const [applicationType, setApplicationType] = React.useState("");
+  const [dateRange, setDateRange] = React.useState([null, null]);
 
   useEffect(() => {
     const fillData = async () => {
@@ -29,7 +31,7 @@ function Dashboard() {
     fillData();
   }, []);
 
-  const tableToolbarHeader = () => {
+  const filterHeader = () => {
     return (
       <Toolbar
         sx={{
@@ -82,6 +84,14 @@ function Dashboard() {
               { key: 4, value: "Four" },
             ]}
           />
+          <RenderDateRangeField
+            value={dateRange}
+            handleChange={setDateRange}
+            label={{
+              from: "From Date",
+              to: "To Date",
+            }}
+          />
         </Box>
       </Toolbar>
     );
@@ -91,7 +101,7 @@ function Dashboard() {
 
   return (
     <div className="App">
-      {tableToolbarHeader()}
+      {filterHeader()}
       <RenderTable data={data} headCells={headCells} />
     </div>
   );
