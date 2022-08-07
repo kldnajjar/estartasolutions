@@ -10,5 +10,9 @@
   left: 0;
 }
 
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  transform: translate(14px, 10px) scale(1) !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
 }

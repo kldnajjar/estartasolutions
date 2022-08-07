@@ -20,7 +20,7 @@ const headCells = [
     label: "Action",
   },
   {
-    id: "actionType",
+    id: "userId",
     disablePadding: false,
     label: "Action Details",
   },

@@ -1,5 +1,4 @@
-import * as React from "react";
-import { alpha } from "@mui/material/styles";
+import React from "react";
 import Box from "@mui/material/Box";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -9,11 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import TableSortLabel from "@mui/material/TableSortLabel";
-import Toolbar from "@mui/material/Toolbar";
 import Paper from "@mui/material/Paper";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import { visuallyHidden } from "@mui/utils";
 
 function descendingComparator(a, b, orderBy) {
@@ -80,31 +75,7 @@ function EnhancedTableHead(props) {
   );
 }
 
-const EnhancedTableToolbar = () => {
-  return (
-    <Toolbar
-      sx={{
-        pl: { sm: 2 },
-        pr: { xs: 1, sm: 1 },
-        ...{
-          bgcolor: (theme) =>
-            alpha(
-              theme.palette.primary.main,
-              theme.palette.action.activatedOpacity
-            ),
-        },
-      }}
-    >
-      <Tooltip title="Filter list">
-        <IconButton>
-          <FilterListIcon />
-        </IconButton>
-      </Tooltip>
-    </Toolbar>
-  );
-};
-
-function EnhancedTable(props) {
+function RenderTable(props) {
   const { data, headCells } = props;
   const rows = data.auditLog;
 
@@ -135,7 +106,6 @@ function EnhancedTable(props) {
   return (
     <Box sx={{ width: "100%" }}>
       <Paper sx={{ width: "100%", mb: 2 }}>
-        <EnhancedTableToolbar />
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
@@ -155,12 +125,16 @@ function EnhancedTable(props) {
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row) => {
                   return (
-                    <TableRow hover tabIndex={-1} key={row.logId}>
+                    <TableRow
+                      hover
+                      tabIndex={-1}
+                      key={`table-row-${row.logId}`}
+                    >
                       <TableCell width="16%">{row.logId}</TableCell>
                       <TableCell width="16%">{row.applicationType}</TableCell>
                       <TableCell width="16%">{row.applicationId}</TableCell>
                       <TableCell width="16%">{row.actionType}</TableCell>
-                      <TableCell width="16%">{row.actionType}</TableCell>
+                      <TableCell width="16%">{row.userId}</TableCell>
                       <TableCell width="16%">{row.creationTimestamp}</TableCell>
                     </TableRow>
                   );
@@ -191,4 +165,4 @@ function EnhancedTable(props) {
   );
 }
 
-export default EnhancedTable;
+export default RenderTable;
