@@ -18,8 +18,8 @@ import { headCells } from "./configuration";
 function Dashboard() {
   const [data, setData] = useState(null);
   const [employeeName, setEmployeeName] = React.useState("");
-  const [actionType, setActionType] = React.useState(null);
-  const [applicationType, setApplicationType] = React.useState(null);
+  const [actionType, setActionType] = React.useState("");
+  const [applicationType, setApplicationType] = React.useState("");
 
   useEffect(() => {
     const fillData = async () => {
