@@ -1,12 +1,18 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import CircularProgress from "@mui/material/CircularProgress";
+import Box from "@mui/material/Box";
 
 const Dashboard = lazy(() => import("./pages/dashboard"));
 const NotFound = lazy(() => import("./pages/notFound"));
 
 function RouterWrapper() {
   const suspenseWapper = (renderingPage) => {
-    const loading = <div>Loading</div>;
+    const loading = (
+      <Box className="center-page">
+        <CircularProgress />
+      </Box>
+    );
     return <Suspense fallback={loading}>{renderingPage}</Suspense>;
   };
 
