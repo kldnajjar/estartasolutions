@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import RenderTable from "../Table";
-import { headCells } from "../../pages/dashboard/configuration";
+import { headCells } from "../../pages/Dashboard/configuration";
 import { getData } from "../../services/dashboard";
 
 test("should render Table component", async () => {
