@@ -4,16 +4,16 @@ import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import { alpha } from "@mui/material/styles";
 
+import { formatDate } from "../../util/date";
 import { getData } from "../../services/dashboard";
 import RenderTable from "../../components/table";
 import RenderTextField from "../../components/text";
 import RenderSelectField from "../../components/select";
 import RenderDateRangeField from "../../components/dateRange";
 import RenderButton from "../../components/button";
-
 import { headCells } from "./configuration";
 
-// import styles from "./Dashboard.module.css";
+import styles from "./Dashboard.module.css";
 
 function Dashboard() {
   const [data, setData] = useState(null);
@@ -34,15 +34,25 @@ function Dashboard() {
 
   const searchLogger = async () => {
     let param = "";
-    if (employeeName) param += `employeeName=${employeeName}`;
-    if (applicationID)
+
+    if (employeeName) {
+      param += `employeeName=${employeeName}`;
+    }
+    if (applicationID) {
       param += `${param ? "&" : ""}applicationID=${applicationID}`;
-    if (actionType) param += `${param ? "&" : ""}actionType=${actionType}`;
-    if (applicationType)
+    }
+    if (actionType) {
+      param += `${param ? "&" : ""}actionType=${actionType}`;
+    }
+    if (applicationType) {
       param += `${param ? "&" : ""}applicationType=${applicationType}`;
-    if (fromDateRange)
-      param += `${param ? "&" : ""}fromDateRange=${fromDateRange}`;
-    if (toDateRange) param += `${param ? "&" : ""}toDateRange=${toDateRange}`;
+    }
+    if (fromDateRange) {
+      param += `${param ? "&" : ""}fromDateRange=${formatDate(fromDateRange)}`;
+    }
+    if (toDateRange) {
+      param += `${param ? "&" : ""}toDateRange=${formatDate(toDateRange)}`;
+    }
 
     if (!param) return toast("No filteration added");
 
@@ -52,7 +62,7 @@ function Dashboard() {
     toast("New data has been requested, check the network tab");
   };
 
-  const filterHeader = () => {
+  const renderFilterHeader = () => {
     return (
       <Toolbar
         sx={{
@@ -132,11 +142,12 @@ function Dashboard() {
     );
   };
 
-  if (!data) return null;
+  if (!data)
+    return <h2 className={styles.empty_container}>Please try later</h2>;
 
   return (
     <div className="App">
-      {filterHeader()}
+      {renderFilterHeader()}
       <RenderTable data={data} headCells={headCells} />
     </div>
   );

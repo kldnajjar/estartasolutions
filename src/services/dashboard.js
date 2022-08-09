@@ -12,6 +12,8 @@ export async function getData(param = "") {
   }
 }
 
-export default {
+const services = {
   getData,
 };
+
+export default services;

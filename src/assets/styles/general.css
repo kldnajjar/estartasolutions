@@ -86,10 +86,12 @@
   user-select: none;
 }
 
+.css-e53awj-MuiStack-root {
+  display: inline-flex !important;
+}
+
 .filter-container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
+  flex: 1;
 }
 
 .react-datepicker__input-container:focus-within,
@@ -97,5 +99,5 @@
   outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+@media only screen and (max-width: 1440px) {
 }
