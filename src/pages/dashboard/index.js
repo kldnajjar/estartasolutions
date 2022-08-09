@@ -150,7 +150,7 @@ function Dashboard() {
         <RenderTable data={data} headCells={headCells} />
       ) : (
         <Box className={styles.empty_container}>
-          <h4>Data Is Loading</h4>
+          <h4>Loading Content</h4>
           <CircularProgress />
         </Box>
       )}
