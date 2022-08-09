@@ -18,10 +18,12 @@ import { headCells } from "./configuration";
 
 function Dashboard() {
   const [data, setData] = useState(null);
-  const [employeeName, setEmployeeName] = React.useState("");
-  const [actionType, setActionType] = React.useState("");
-  const [applicationType, setApplicationType] = React.useState("");
-  const [dateRange, setDateRange] = React.useState([null, null]);
+  const [employeeName, setEmployeeName] = useState("");
+  const [applicationID, setApplicationID] = useState("");
+  const [actionType, setActionType] = useState("");
+  const [applicationType, setApplicationType] = useState("");
+  const [fromDateRange, setFromDateRange] = useState("");
+  const [toDateRange, setToDateRange] = useState("");
 
   useEffect(() => {
     const fillData = async () => {
@@ -54,7 +56,7 @@ function Dashboard() {
         <Box
           component="form"
           sx={{
-            "& > :not(style)": { m: 1, width: "25ch" },
+            "& > :not(style)": { m: 1, width: "12rem" },
           }}
           noValidate
           autoComplete="off"
@@ -70,8 +72,11 @@ function Dashboard() {
             label="Action Type"
             id="action-type-field"
             items={[
-              { key: 1, value: "One" },
-              { key: 2, value: "Two" },
+              { key: "DARI_REFRESH_TOKEN", value: "DARI_REFRESH_TOKEN" },
+              { key: "DARI_APP_LOGIN", value: "DARI_APP_LOGIN" },
+              { key: "INITIATE_APPLICATION", value: "INITIATE_APPLICATION" },
+              { key: "SUBMIT_APPLICATION", value: "SUBMIT_APPLICATION" },
+              { key: "ADD_EMPLOYEE", value: "ADD_EMPLOYEE" },
             ]}
           />
           <RenderSelectField
@@ -80,17 +85,31 @@ function Dashboard() {
             label="Application Type"
             id="application-type-field"
             items={[
-              { key: 3, value: "Three" },
-              { key: 4, value: "Four" },
+              { key: "ADD_COMPANY_EMPLOYEE", value: "ADD_COMPANY_EMPLOYEE" },
+              { key: "CERT_TITLE_DEED_PLOT", value: "CERT_TITLE_DEED_PLOT" },
+              { key: "LEASE_REGISTRATION", value: "LEASE_REGISTRATION" },
+              { key: "ADD_POA", value: "ADD_POA" },
+              { key: "CERT_TITLE_DEED_PLOT", value: "CERT_TITLE_DEED_PLOT" },
+              { key: "ADD_COMPANY", value: "ADD_COMPANY" },
+              { key: "CERT_PROP_OWNERSHIP", value: "CERT_PROP_OWNERSHIP" },
+              { key: "LEASE_CLOSURE", value: "LEASE_CLOSURE" },
+              { key: "three", value: "Three" },
             ]}
           />
           <RenderDateRangeField
-            value={dateRange}
-            handleChange={setDateRange}
+            startDate={fromDateRange}
+            endDate={toDateRange}
+            handleStartChange={setFromDateRange}
+            handleEndChange={setToDateRange}
             label={{
               from: "From Date",
               to: "To Date",
             }}
+          />
+          <RenderTextField
+            value={applicationID}
+            handleChange={setApplicationID}
+            label="Application ID"
           />
         </Box>
       </Toolbar>

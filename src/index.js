@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ToastContainer } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
+import "react-datepicker/dist/react-datepicker.css";
 import "./index.css";
 import "./assets/styles/general.css";
 

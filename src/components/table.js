@@ -134,7 +134,7 @@ function RenderTable(props) {
                       <TableCell width="16%">{row.applicationType}</TableCell>
                       <TableCell width="16%">{row.applicationId}</TableCell>
                       <TableCell width="16%">{row.actionType}</TableCell>
-                      <TableCell width="16%">{row.userId}</TableCell>
+                      <TableCell width="16%"></TableCell>
                       <TableCell width="16%">{row.creationTimestamp}</TableCell>
                     </TableRow>
                   );
