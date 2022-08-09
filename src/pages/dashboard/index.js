@@ -3,6 +3,7 @@ import { toast } from "react-toastify";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import { alpha } from "@mui/material/styles";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import { formatDate } from "../../util/date";
 import { getData } from "../../services/dashboard";
@@ -142,13 +143,17 @@ function Dashboard() {
     );
   };
 
-  if (!data)
-    return <h2 className={styles.empty_container}>Please try later</h2>;
-
   return (
     <div className="App">
       {renderFilterHeader()}
-      <RenderTable data={data} headCells={headCells} />
+      {data ? (
+        <RenderTable data={data} headCells={headCells} />
+      ) : (
+        <Box className={styles.empty_container}>
+          <h4>Data Is Loading</h4>
+          <CircularProgress />
+        </Box>
+      )}
     </div>
   );
 }

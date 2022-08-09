@@ -10,8 +10,13 @@
   left: 0;
 }
 
-.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
-  transform: translate(14px, 10px) scale(1) !important;
+.filter-container {
+  flex: 1;
+}
+
+.react-datepicker__input-container:focus-within,
+.react-datepicker__input-container:focus-within input {
+  outline: none;
 }
 
 .datepicker-range {
@@ -33,6 +38,11 @@
   animation-duration: 10ms;
   padding-top: 1px;
   padding: 8.5px 14px;
+}
+
+/* Material UI Overwrite */
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  transform: translate(14px, 10px) scale(1) !important;
 }
 
 .css-1in441m {
@@ -89,15 +99,7 @@
 .css-e53awj-MuiStack-root {
   display: inline-flex !important;
 }
-
-.filter-container {
-  flex: 1;
-}
-
-.react-datepicker__input-container:focus-within,
-.react-datepicker__input-container:focus-within input {
-  outline: none;
-}
+/* End */
 
 @media only screen and (max-width: 1440px) {
 }
