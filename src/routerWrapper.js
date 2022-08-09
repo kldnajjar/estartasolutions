@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
-const Dashboard = lazy(() => import("./pages/Dashboard"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+const Dashboard = lazy(() => import("./pages/Dashboard/index"));
+const NotFound = lazy(() => import("./pages/NotFound/index"));
 
 function RouterWrapper() {
   const suspenseWapper = (renderingPage) => {
