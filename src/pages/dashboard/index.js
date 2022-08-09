@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
-import FilterListIcon from "@mui/icons-material/FilterList";
 import Box from "@mui/material/Box";
 import { alpha } from "@mui/material/styles";
 
@@ -11,6 +8,7 @@ import RenderTable from "../../components/table";
 import RenderTextField from "../../components/text";
 import RenderSelectField from "../../components/select";
 import RenderDateRangeField from "../../components/dateRange";
+import RenderButton from "../../components/button";
 
 import { headCells } from "./configuration";
 
@@ -33,6 +31,10 @@ function Dashboard() {
     fillData();
   }, []);
 
+  const searchLogger = () => {
+    alert(1);
+  };
+
   const filterHeader = () => {
     return (
       <Toolbar
@@ -48,16 +50,12 @@ function Dashboard() {
           },
         }}
       >
-        {/* <Tooltip title="Filter list">
-        <IconButton>
-          <FilterListIcon />
-        </IconButton>
-      </Tooltip> */}
         <Box
           component="form"
           sx={{
-            "& > :not(style)": { m: 1, width: "12rem" },
+            "& > :not(style)": { m: 1, maxWidth: "11rem" },
           }}
+          className="filter-container"
           noValidate
           autoComplete="off"
         >
@@ -111,6 +109,7 @@ function Dashboard() {
             handleChange={setApplicationID}
             label="Application ID"
           />
+          <RenderButton handleClick={searchLogger} label="Search Logger" />
         </Box>
       </Toolbar>
     );
