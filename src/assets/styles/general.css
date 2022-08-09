@@ -19,6 +19,7 @@
 .datepicker-range-container > div {
   margin: 8px;
   max-width: 11rem;
+  position: relative;
 }
 
 .filter-container {
@@ -52,6 +53,7 @@
 }
 
 /* Material UI Overwrite */
+.css-p0rm37,
 .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   transform: translate(14px, 10px) scale(1) !important;
 }
@@ -71,6 +73,7 @@
   white-space: nowrap;
 }
 
+.css-u9osun,
 .css-1sumxir-MuiFormLabel-root-MuiInputLabel-root {
   color: rgba(0, 0, 0, 0.6);
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -107,6 +110,7 @@
   user-select: none;
 }
 
+.css-1t62lt9,
 .css-e53awj-MuiStack-root {
   display: inline-flex !important;
 }

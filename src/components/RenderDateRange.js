@@ -17,8 +17,8 @@ function RenderDateRangeField(props) {
         <label
           className={`MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary ${
             startDate || startDateIsOpened
-              ? "css-1sumxir-MuiFormLabel-root-MuiInputLabel-root MuiInputLabel-shrink MuiFormLabel-filled"
-              : "css-1pysi21-MuiFormLabel-root-MuiInputLabel-root"
+              ? "css-1sumxir-MuiFormLabel-root-MuiInputLabel-root MuiInputLabel-shrink MuiFormLabel-filled css-u9osun"
+              : "css-1pysi21-MuiFormLabel-root-MuiInputLabel-root css-cktaik"
           } ${startDateIsOpened ? "Mui-focused" : ""}`}
           data-shrink={startDate || startDateIsOpened ? true : false}
           htmlFor="startDateRange"
@@ -26,7 +26,7 @@ function RenderDateRangeField(props) {
           {label.from}
         </label>
         <div
-          className={`MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root ${
+          className={`MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root css-1v4ccyo ${
             startDateIsOpened ? "Mui-focused" : ""
           }`}
         >
@@ -46,10 +46,11 @@ function RenderDateRangeField(props) {
             withPortal
             onChangeRaw={handleDateChangeRaw}
             dateFormat="MMMM d, yyyy h:mm aa"
+            isClearable={startDate ? true : false}
           />
           <fieldset
             aria-hidden="true"
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline css-igs3ac"
           >
             <legend
               className={`${
@@ -66,8 +67,8 @@ function RenderDateRangeField(props) {
         <label
           className={`MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary ${
             endDate || endDateIsOpened
-              ? "css-1sumxir-MuiFormLabel-root-MuiInputLabel-root MuiInputLabel-shrink MuiFormLabel-filled"
-              : "css-1pysi21-MuiFormLabel-root-MuiInputLabel-root"
+              ? "css-1sumxir-MuiFormLabel-root-MuiInputLabel-root MuiInputLabel-shrink MuiFormLabel-filled css-u9osun"
+              : "css-1pysi21-MuiFormLabel-root-MuiInputLabel-root css-cktaik"
           } ${endDateIsOpened ? "Mui-focused" : ""}`}
           data-shrink={endDate || endDateIsOpened ? true : false}
           htmlFor="startDateRange"
@@ -75,7 +76,7 @@ function RenderDateRangeField(props) {
           {label.to}
         </label>
         <div
-          className={`MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root ${
+          className={`MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiInputBase-sizeSmall css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root css-1v4ccyo ${
             endDateIsOpened ? "Mui-focused" : ""
           }`}
         >
@@ -95,10 +96,11 @@ function RenderDateRangeField(props) {
             withPortal
             onChangeRaw={handleDateChangeRaw}
             dateFormat="MMMM d, yyyy h:mm aa"
+            isClearable={endDate ? true : false}
           />
           <fieldset
             aria-hidden="true"
-            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline css-igs3ac"
           >
             <legend
               className={`${
