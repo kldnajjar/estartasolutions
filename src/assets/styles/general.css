@@ -10,6 +10,17 @@
   left: 0;
 }
 
+.datepicker-range-container {
+  display: inline-flex;
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.datepicker-range-container > div {
+  margin: 8px;
+  max-width: 11rem;
+}
+
 .filter-container {
   flex: 1;
 }

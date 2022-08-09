@@ -10,6 +10,7 @@ function RenderTextField(props) {
       label={label}
       value={value}
       onChange={(e) => handleChange(e.target.value)}
+      data-testid="text"
     />
   );
 }

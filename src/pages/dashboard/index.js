@@ -7,11 +7,11 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 import { formatDate } from "../../util/date";
 import { getData } from "../../services/dashboard";
-import RenderTable from "../../components/table";
-import RenderTextField from "../../components/text";
-import RenderSelectField from "../../components/select";
-import RenderDateRangeField from "../../components/dateRange";
-import RenderButton from "../../components/button";
+import RenderTable from "../../components/Table";
+import RenderTextField from "../../components/Text";
+import RenderSelectField from "../../components/Select";
+import RenderDateRangeField from "../../components/DateRange";
+import RenderButton from "../../components/Button";
 import { headCells } from "./configuration";
 
 import styles from "./Dashboard.module.css";
@@ -144,7 +144,7 @@ function Dashboard() {
   };
 
   return (
-    <div className="App">
+    <div className="dashboard-container" data-testid="dashboard">
       {renderFilterHeader()}
       {data ? (
         <RenderTable data={data} headCells={headCells} />

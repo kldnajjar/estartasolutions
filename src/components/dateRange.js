@@ -12,7 +12,7 @@ function RenderDateRangeField(props) {
   };
 
   return (
-    <>
+    <div data-testid="datepicker-range" className="datepicker-range-container">
       <div className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root">
         <label
           className={`MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-sizeSmall MuiInputLabel-outlined MuiFormLabel-colorPrimary ${
@@ -110,7 +110,7 @@ function RenderDateRangeField(props) {
           </fieldset>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -6,7 +6,7 @@ function RenderButton(props) {
   const { label, handleClick } = props;
 
   return (
-    <Stack spacing={2} direction="row">
+    <Stack spacing={2} direction="row" data-testid="button">
       <Button
         variant="contained"
         onClick={() => {

@@ -8,7 +8,7 @@ function RenderSelectField(props) {
   const { id, label, value, handleChange, items } = props;
 
   return (
-    <FormControl fullWidth>
+    <FormControl fullWidth data-testid="select">
       <InputLabel id={`${id}-label`}>{label}</InputLabel>
       <Select
         labelId={`${id}-label`}
