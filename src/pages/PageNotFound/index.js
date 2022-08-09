@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./NotFound.module.css";
+import styles from "./PageNotFound.module.css";
 
-function NotFound() {
+function PageNotFound() {
   return (
     <div className={styles.main}>
       <div className={styles.fof}>
@@ -11,4 +11,4 @@ function NotFound() {
   );
 }
 
-export default NotFound;
+export default PageNotFound;

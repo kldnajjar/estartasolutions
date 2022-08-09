@@ -4,7 +4,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
 const Dashboard = lazy(() => import("./pages/Dashboard"));
-const NotFound = lazy(() => import("./pages/NotFound"));
+const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 function RouterWrapper() {
   const suspenseWapper = (renderingPage) => {
@@ -21,7 +21,7 @@ function RouterWrapper() {
       <Routes>
         <Route path="/dashboard" element={suspenseWapper(<Dashboard />)} />
         <Route path="/" element={<Navigate to="/dashboard" replace />} />
-        <Route path="*" element={suspenseWapper(<NotFound />)} />
+        <Route path="*" element={suspenseWapper(<PageNotFound />)} />
       </Routes>
     </BrowserRouter>
   );
