@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import RenderTextField from "../Text";
+import RenderTextField from "../RenderText";
 
 test("should render Text component", () => {
   render(<RenderTextField value="" handleChange={() => {}} label="" />);

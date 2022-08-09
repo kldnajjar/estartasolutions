@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import RenderDateRangeField from "../DateRange";
+import RenderDateRangeField from "../RenderDateRange";
 
 test("should render Range DatePicker component", () => {
   render(

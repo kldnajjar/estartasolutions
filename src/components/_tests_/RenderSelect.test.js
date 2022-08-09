@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import RenderSelectField from "../Select";
+import RenderSelectField from "../RenderSelect";
 
 test("should render Select component", () => {
   render(

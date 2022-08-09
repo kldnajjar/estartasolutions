@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import RenderTable from "../Table";
+import RenderTable from "../RenderTable";
 import { headCells } from "../../pages/Logger/configuration";
 import { getData } from "../../services/logger";
 

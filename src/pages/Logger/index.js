@@ -7,11 +7,11 @@ import CircularProgress from "@mui/material/CircularProgress";
 
 import { formatDate } from "../../util/date";
 import { getData } from "../../services/logger";
-import RenderTable from "../../components/Table";
-import RenderTextField from "../../components/Text";
-import RenderSelectField from "../../components/Select";
-import RenderDateRangeField from "../../components/DateRange";
-import RenderButton from "../../components/Button";
+import RenderTable from "../../components/RenderTable";
+import RenderTextField from "../../components/RenderText";
+import RenderSelectField from "../../components/RenderSelect";
+import RenderDateRangeField from "../../components/RenderDateRange";
+import RenderButton from "../../components/RenderButton";
 import { headCells } from "./configuration";
 
 import styles from "./Logger.module.css";

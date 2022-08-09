@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import RenderButton from "../Button";
+import RenderButton from "../RenderButton";
 
 test("should render Button component", () => {
   render(<RenderButton handleClick={() => {}} label="" />);
