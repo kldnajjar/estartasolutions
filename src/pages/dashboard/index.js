@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { toast } from "react-toastify";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import { alpha } from "@mui/material/styles";
@@ -31,8 +32,24 @@ function Dashboard() {
     fillData();
   }, []);
 
-  const searchLogger = () => {
-    alert(1);
+  const searchLogger = async () => {
+    let param = "";
+    if (employeeName) param += `employeeName=${employeeName}`;
+    if (applicationID)
+      param += `${param ? "&" : ""}applicationID=${applicationID}`;
+    if (actionType) param += `${param ? "&" : ""}actionType=${actionType}`;
+    if (applicationType)
+      param += `${param ? "&" : ""}applicationType=${applicationType}`;
+    if (fromDateRange)
+      param += `${param ? "&" : ""}fromDateRange=${fromDateRange}`;
+    if (toDateRange) param += `${param ? "&" : ""}toDateRange=${toDateRange}`;
+
+    if (!param) return toast("No filteration added");
+
+    param = `?${param}`;
+    const { data: result } = await getData(param);
+    setData(result);
+    toast("New data has been requested, check the network tab");
   };
 
   const filterHeader = () => {

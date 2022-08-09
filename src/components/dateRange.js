@@ -7,6 +7,10 @@ function RenderDateRangeField(props) {
   const [startDateIsOpened, setStartDateIsOpen] = React.useState(false);
   const [endDateIsOpened, setEndDateIsOpen] = React.useState(false);
 
+  const handleDateChangeRaw = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <>
       <div className="MuiFormControl-root MuiTextField-root css-1u3bzj6-MuiFormControl-root-MuiTextField-root">
@@ -38,6 +42,10 @@ function RenderDateRangeField(props) {
             onCalendarOpen={() => setStartDateIsOpen(true)}
             onCalendarClose={() => setStartDateIsOpen(false)}
             maxDate={endDate}
+            showTimeSelect
+            withPortal
+            onChangeRaw={handleDateChangeRaw}
+            dateFormat="MMMM d, yyyy h:mm aa"
           />
           <fieldset
             aria-hidden="true"
@@ -83,6 +91,10 @@ function RenderDateRangeField(props) {
             onCalendarOpen={() => setEndDateIsOpen(true)}
             onCalendarClose={() => setEndDateIsOpen(false)}
             minDate={startDate}
+            showTimeSelect
+            withPortal
+            onChangeRaw={handleDateChangeRaw}
+            dateFormat="MMMM d, yyyy h:mm aa"
           />
           <fieldset
             aria-hidden="true"
