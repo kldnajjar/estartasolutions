@@ -47,5 +47,8 @@
   "devDependencies": {
     "@testing-library/react": "^13.3.0",
     "react-test-renderer": "^18.2.0"
+  },
+  "engines": {
+    "node": "16.13.0"
   }
 }
