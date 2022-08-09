@@ -2,8 +2,8 @@ import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import RenderTable from "../Table";
-import { headCells } from "../../pages/Dashboard/configuration";
-import { getData } from "../../services/dashboard";
+import { headCells } from "../../pages/Logger/configuration";
+import { getData } from "../../services/logger";
 
 test("should render Table component", async () => {
   const { data: result } = await getData();

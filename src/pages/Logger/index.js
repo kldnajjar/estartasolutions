@@ -6,7 +6,7 @@ import { alpha } from "@mui/material/styles";
 import CircularProgress from "@mui/material/CircularProgress";
 
 import { formatDate } from "../../util/date";
-import { getData } from "../../services/dashboard";
+import { getData } from "../../services/logger";
 import RenderTable from "../../components/Table";
 import RenderTextField from "../../components/Text";
 import RenderSelectField from "../../components/Select";
@@ -14,9 +14,9 @@ import RenderDateRangeField from "../../components/DateRange";
 import RenderButton from "../../components/Button";
 import { headCells } from "./configuration";
 
-import styles from "./Dashboard.module.css";
+import styles from "./Logger.module.css";
 
-function Dashboard() {
+function Logger() {
   const [data, setData] = useState(null);
   const [employeeName, setEmployeeName] = useState("");
   const [applicationID, setApplicationID] = useState("");
@@ -144,7 +144,7 @@ function Dashboard() {
   };
 
   return (
-    <div className="dashboard-container" data-testid="dashboard">
+    <div className="logger-container" data-testid="logger">
       {renderFilterHeader()}
       {data ? (
         <RenderTable data={data} headCells={headCells} />
@@ -158,4 +158,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default Logger;

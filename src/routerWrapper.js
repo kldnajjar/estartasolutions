@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import Box from "@mui/material/Box";
 
-const Dashboard = lazy(() => import("./pages/Dashboard"));
+const Logger = lazy(() => import("./pages/Logger"));
 const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 function RouterWrapper() {
@@ -19,8 +19,8 @@ function RouterWrapper() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/dashboard" element={suspenseWapper(<Dashboard />)} />
-        <Route path="/" element={<Navigate to="/dashboard" replace />} />
+        <Route path="/logger" element={suspenseWapper(<Logger />)} />
+        <Route path="/" element={<Navigate to="/logger" replace />} />
         <Route path="*" element={suspenseWapper(<PageNotFound />)} />
       </Routes>
     </BrowserRouter>

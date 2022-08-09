@@ -8,7 +8,7 @@ export async function getData(param = "") {
     const { data } = await http.get(`${apiEndPoint}${param}`);
     return { data: data.result };
   } catch (error) {
-    toast.error("Error while getting dashboard data");
+    toast.error("Error while getting logger data");
   }
 }
 
