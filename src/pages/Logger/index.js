@@ -63,6 +63,15 @@ function Logger() {
     toast("New data has been requested, check the network tab");
   };
 
+  const clearFilteration = () => {
+    setEmployeeName("");
+    setApplicationID("");
+    setActionType("");
+    setApplicationType("");
+    setFromDateRange("");
+    setToDateRange("");
+  };
+
   const renderFilterHeader = () => {
     return (
       <Toolbar
@@ -138,6 +147,11 @@ function Logger() {
             label="Application ID"
           />
           <RenderButton handleClick={searchLogger} label="Search Logger" />
+          <RenderButton
+            handleClick={clearFilteration}
+            label="Clear"
+            fieldClassName="danger"
+          />
         </Box>
       </Toolbar>
     );

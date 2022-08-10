@@ -52,6 +52,15 @@
   padding: 8.5px 14px;
 }
 
+.danger {
+  background-color: #dc3545 !important;
+}
+
+.danger:hover,
+.danger:focus {
+  background-color: #c82333 !important;
+}
+
 /* Material UI Overwrite */
 .css-p0rm37,
 .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
