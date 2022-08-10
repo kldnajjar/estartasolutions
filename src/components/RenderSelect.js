@@ -18,6 +18,7 @@ function RenderSelectField(props) {
         label={label}
         onChange={(e) => handleChange(e.target.value)}
       >
+        <MenuItem value="">Select a value</MenuItem>
         {items.map((item, index) => {
           return (
             <MenuItem value={item.key} key={`select-${id}-${index}`}>

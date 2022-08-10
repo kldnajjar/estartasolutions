@@ -45,7 +45,7 @@ function RenderDateRangeField(props) {
             showTimeSelect
             withPortal
             onChangeRaw={handleDateChangeRaw}
-            dateFormat="MMMM d, yyyy h:mm aa"
+            dateFormat="yyyy-MM-dd HH:mm:ss"
             isClearable={startDate ? true : false}
           />
           <fieldset
@@ -95,7 +95,7 @@ function RenderDateRangeField(props) {
             showTimeSelect
             withPortal
             onChangeRaw={handleDateChangeRaw}
-            dateFormat="MMMM d, yyyy h:mm aa"
+            dateFormat="yyyy-MM-dd HH:mm:ss"
             isClearable={endDate ? true : false}
           />
           <fieldset

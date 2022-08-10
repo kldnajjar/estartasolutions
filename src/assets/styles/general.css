@@ -56,6 +56,10 @@
   background-color: #dc3545 !important;
 }
 
+.center {
+  text-align: center;
+}
+
 .danger:hover,
 .danger:focus {
   background-color: #c82333 !important;
