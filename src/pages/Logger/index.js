@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import { alpha } from "@mui/material/styles";
@@ -107,7 +107,7 @@ function Logger() {
         const columnName = filteredColumns[j];
         const isDateColumn = columnName.indexOf("DateRange") > -1;
         let filteredValue = obj[columnName];
-        let columnValue = results[i][columnName];
+        let columnValue = results[i][columnName] + "";
 
         if (isDateColumn) {
           count = compareDate(
@@ -116,7 +116,7 @@ function Logger() {
             columnName,
             count
           );
-        } else if (columnValue == filteredValue) {
+        } else if (columnValue === filteredValue) {
           count++;
         } else break; // Early exist
       }
