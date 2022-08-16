@@ -234,7 +234,11 @@ function Logger() {
     <div className="logger-container" data-testid="logger">
       {renderFilterHeader()}
       {renderData ? (
-        <RenderTable data={renderData} headCells={headCells} />
+        <RenderTable
+          data={renderData}
+          headCells={headCells}
+          key={`table-id-${renderData.auditLog.length}`}
+        />
       ) : (
         <Box className={styles.empty_container}>
           <h4>Loading Content</h4>
